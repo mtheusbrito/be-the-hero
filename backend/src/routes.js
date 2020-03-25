@@ -1,17 +1,14 @@
 const express = require('express');
 const routes = express.Router();
+const ongController = require('./controllers/ongController');
+const incidentController = require('./controllers/incidentController');
 
-// Tipos de parametros
-// Query Params: Parâmentros nomeados enviados na rota apos '?' (Filtros, paginação)
-// Route Params: Parâmetros utilizados para identificar recursos. 
-// Request Body: Corpo da requisicao, utilizado para criar ou alterar recursos.
-routes.get('/', (request, response) => {
-    return response.json({
-        evento: 'Semana OmniStack 11.0',
-        aluno: 'Matheus '
-    });
 
-});
+routes.get('/ongs', ongController.index);
+routes.post('/ongs', ongController.create);
 
+routes.get('/incidents', incidentController.index);
+routes.post('/incidents', incidentController.create);
+routes.delete('/incidents/:id', incidentController.delete);
 
 module.exports = routes;  
