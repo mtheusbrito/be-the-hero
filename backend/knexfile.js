@@ -1,5 +1,5 @@
 // Update with your config settings.
-require('dotenv').config({path: '../.env'});
+require('dotenv').config({path: '.env'});
 module.exports = {
 
   development: {
@@ -9,7 +9,11 @@ module.exports = {
     user : process.env.DB_USER,
     password : process.env.DB_PASS,
     database : process.env.DB_NAME
-    }
+    },
+    migrations: {
+      directory: './src/database/migrations'
+    },
+    useNullAsDefault: true,
   },
 
   staging: {
