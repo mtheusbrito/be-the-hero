@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-
-
-class App extends Component {
-  render() {
-    return (
-     <h1>Hello world</h1>
-    );
-  }
+import './global.css';
+import Logon from './pages/Logon';
+function App() {
+  return (
+    <Logon />
+  );
 }
-
 export default App;
