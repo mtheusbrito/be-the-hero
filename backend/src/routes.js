@@ -6,7 +6,9 @@ const profileController = require('./controllers/profileController');
 const sessionController = require('./controllers/sessionController');
 
 
-
+routes.get('/', async (request, response) =>{
+    return await response.json("API Be The Hero");
+});
 routes.get('/ongs', ongController.index);
 routes.post('/ongs', ongController.create);
 
